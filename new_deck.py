@@ -1,20 +1,3 @@
-#     Requirements:
-# The game should recognise an ace as high or low depending on what is best for the player;
-# The house should be an automated player but other players, up to 4,
-# should be humans operating a command line interface;
-# The house should win all ties;
-# It is possible for more than one player to win a hand;
-# Must be able to stick and twist
-# Must have an autonomous dealer
-# Dealer starts by showing only a single card
-# All Players are dealt two cards to start
-# Extra marks will be awarded for tests, good function/variable names,
-# sensible comments/docstrings, clean Pythonic code
-# The following are out of scope:
-# Insurance rule
-# Keep track of currency
-# Implement the split rule.
-
 import random
 
 def get_deck():
@@ -22,6 +5,66 @@ def get_deck():
     random.shuffle(deck)
     return iter(deck)
 
+values = {
+        '2' : 2, '3': 3, '4' : 4, '5' : 5, '6' : 6, '7' : 7, '8' : 8, '9' : 9,
+        'T' : 10, 'J' : 10, 'Q' : 10, 'K' : 10, 'A' : 11
+        }
+
+
+
+def score(list):
+    sum = 0
+    for card in list:
+        number = values[card[0]]
+        sum += number
+    return sum
+#player
+# while true
+#     if hit
+
+        #continue
+#     if stick
+#         break
+#dealer
+# while true
+#     if less than 17
+#         hit
+#
+#     elif more than 21
+#         bust
+#         break
+
+def hit():
+    while True:
+        player1_hand.append(next(cards))
+        #total up and show value
+        print(player1_hand)
+        #print(player1_value)
+
+
+# def playagain():
+#     print('Do you want to play again? (yes or no)')
+#     return input().startswith('y')
+
+
+##### START MAIN FUNCTION #####
+
+print("Welcome to Blackjack, let's play! ")
 cards = get_deck()
-print(next(cards))
-print(next(cards))
+#player1_value = total()
+player1_hand = []
+dealer_hand = []
+#### Give out two cards to player1 and one to dealer ####
+
+print("Your hand: ")
+player1_hand.append(next(cards))
+player1_hand.append(next(cards))
+print(player1_hand)
+player1_score = score(player1_hand)
+print(player1_score)
+
+print("Dealer's hand: ")
+dealer_hand.append(next(cards))
+print(dealer_hand)
+
+##playagain()
