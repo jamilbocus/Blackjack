@@ -4,7 +4,8 @@ Contents: Zip file "Blackjack" containing
 -Blackjack_logic.jpg
 Installation
 -Unzip file
--Start Blackjack.exe
+-Open Blackjack project in pycharms
+-Run Blackjack.py
 How to play (User guide)
 -Run the program newdeck.py
 -Follow on screen instructions
